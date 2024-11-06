@@ -1,0 +1,39 @@
+Basic React Example
+https://codesandbox.io/p/sandbox/alphatab-jop9yk?file=%2Fsrc%2FApp.js
+
+useEffect double rendering even with [] dependancy
+
+https://stackoverflow.com/questions/61254372/my-react-component-is-rendering-twice-because-of-strict-mode/61897567#61897567
+
+  ReactDOM.render(
+     <React.StrictMode>
+       {app}
+     </React.StrictMode>,
+    document.getElementById('root')
+  );
+If so, you can disable StrictMode by removing the <React.StrictMode> tag:
+
+  ReactDOM.render(
+    {app}
+    document.getElementById('root')
+  );
+
+Make it display tab only
+https://alphatab.net/docs/reference/settings/display/staveprofile/
+
+Make the layout horizontal
+
+https://github.com/CoderLine/alphaTabWebsite/blob/main/docs/reference/settings/display/layoutmode.mdx
+
+Remove the rendered by alphatab
+Not sure, but may set a style that is display:none for the file.
+
+Accessing note/beat press on score
+
+IMPORTANT if you using tab only, use need to use beatMouseUp
+log the api in your code to see what is available
+
+const api = new alphaTab.AlphaTabApi(document.querySelector('#alphaTab'));
+api.noteMouseUp.on((note) => {
+    api.playNote(note);
+});
